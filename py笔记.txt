@@ -1,0 +1,13 @@
+
+《语法》
+1，三种扩充列表的方式
+men=["小甲鱼","bud","hy","yj"]
+men.append("flww")
+men.extend(["zlxx","carryml"])	#men2=["as","de"]    等价于 men+=men2，但+号两边的元素类型必须一致，类型必须一致，类型必须一致
+men.insert(0,"md")
+
+2.三种列表删除元素
+men.remove("yj")
+del men[1]
+men.pop()		#移出最后一个元素，可以用ct=men.pop()来保存移出来的值
+
