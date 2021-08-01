@@ -8,6 +8,12 @@ public void Main()
 
 
     }
+    public int ADD(int a,int b,int c)
+    {
+
+        return a + b+c;
+    }
+
 
 
 
