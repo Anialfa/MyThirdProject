@@ -1,0 +1,239 @@
+官网下载exe包,双击安装.
+第一次使用,在应用程序搜索IDLE,打开python编辑面板.
+<<快捷操作>>
+<<心得体会>>
+<<语法>>
+<<飞机游戏>>
+
+
+<<心得体会>>
+1,python对缩进的要求非常严格,缩进很大程度上取代了c类语言中的大括号
+2,if else后面加冒号.语句的末尾不需要分号结束.语句块用缩进来区分
+	2_1,if 后面要加冒号,数值比较要区分数值类型,str类型无法进行数值比较
+	2_2,elif=else if,简洁写法
+3,通过语句:dir(__builtins__)来查看内置BIF,比如input
+ 再通过语句:help(input)来查看这个bif怎么用
+4,python用while来循环代码块,用缩进来标记需要循环的部分
+5,python也是面向对象的语言
+6,任何涉及到界面移动的地方都要屏幕刷新
+
+7,变量互换,交换a与b.
+	a,b=b,a
+
+8,字符串拼接,可以用常规方式("aaa"+"bbb"+"+str(10))
+	如果数量多则写为("aaa%s%d"%(bbb,10))
+	或("aaa{}{}".format(bbb,10))
+	或("aaa{0}{0}".format(bbb))=("aaabbbbbb")	
+	
+	python版本大于3.6时:
+	(f"aaa{表达式1},{表达式2}")
+	表达式可以是10+5,也可以是一个函数
+	
+9,yield用法:产出.和return的区别是,yield一个值后函数并不会马上返回,继续执行.如下载文档,一部分下载好了就可以输出,不用等全部下载.
+
+10,列表解析式
+num=["a","b","c"]
+num_up=[x.upper() for x in num]
+>>>num_up=["A","B","C"]	
+
+挑选出列表中以a开头的字符串,可以写个条件判断.
+也可以:
+num=["a","b","c"]
+num_filter=[x for x in num if x.startswith("a")]
+
+11,py中关于循环的函数=Enumerate函数
+遍历同时输出序号:
+num=["a","b","c"]
+for i,x in enumerate(num):  ##两参数 i=元素索引 x=元素值
+	print(i,x)
+
+	11_1,反向遍历
+		改成for i,x in enumerate(reversed(num))
+	
+	11_2,按首字母顺序遍历
+		改成for i,x in enumerate(sorted(num))
+
+12,字典的合并操作
+a={"ross":"123456","xiaoming":"abc123"}
+b={"lili":"111111","aili":"233333"}	
+c={**a,**b}				##等价于	c={}
+					##等价于	for k in a:
+					##等价于	c=[k]=a[k]
+					##等价于	for k in b:
+					##等价于	c=[k]=b[k]
+
+## **符号意思是解包
+
+13,三元运算符
+s="pass" if score>60 else "fail"
+##<<语法>>中也有
+
+14,序列解包
+name="zhang san"
+ste_list=name.split()	##根据空格的位置,拆分字符串,再存到列表
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<<语法>>
+1,
+temp = input("输入一个数:")  #输入8,这个8是字符型
+guss = int(temp)  #guss=整形8 
+如果不要求guss是整形,就可以写成:
+guss=input("输入一个数:")
+2,
+表达与,或,非
+与=and   或=or  非=not(取相反的bool值)
+if innumi<100 and innumi>0: 
+3,
+转义字符 \
+打出 Let's go
+>>>'Let\'s go'
+4,
+换行符 \n
+打出 C:\now
+>>>print('C:\\now')
+5,
+原始字符串 r''
+打出 C:\now\new\nevr\n
+>>>print(r'C:\now\new\nevr\n')
+6,
+连续字符输入符 """ 或是 '''
+成对出现前后共6个双引号或是单引号
+7,
+while循环
+while a!=b:
+	xxx
+	xxx
+8,
+字符串拼接
+(1)name1='aa'
+   name2='bb'
+   strname=name1+name2
+(2)num=34
+  print('num='+str(num))
+(3)a='hello'
+   b='world'
+   c=a,b
+   print(c)
+
+9,
+幂运算
+5**2=25  -3**2=-9
+取整的除法:
+5//2=2  5.0//2=2.0
+普通除法:
+5/2=2.5
+
+10,
+三元运算符
+small=x if x<y else y
+等于  a=x<y?x:y
+
+11,
+assert 3>4
+条件为假,则
+主动抛出异常,停止进程
+用于程序自检
+
+12,
+foreach的用法
+mem=["a","b","c"]
+for each in mem:
+    print(each,len(mem))
+
+13,
+range步进
+  for i in range(1,10,2):
+	print(i)
+
+>>>1,3,5,7,9
+
+
+14,
+向列表添加元素
+empty=[]
+empty.append("aaa")  #append只能添加一个元素
+>>>["aaa"]
+
+empty.extend(["bbb","ccc"])#extend,同样只能添加一个元素,但可以用一个列表去扩展另一个列表
+>>>["aaa","bbb","ccc"]
+
+empty.insert(1,"ddd")
+>>>["aaa","ddd","bbb","ccc"]
+
+15
+元组
+
+
+
+
+
+
+
+
+
+<<快捷操作>>:
+回到上一条语句:alt+N
+回到下一条语句:alt+P
+Alt+P	浏览历史命令（上一条）	仅 Python Shell 窗口可用
+Alt+N	浏览历史命令（下一条）	仅 Python Shell 窗口可用
+Ctrl+F6	重新启动 Python Shell	仅 Python Shell 窗口可用
+
+F1	打开 Python 帮助文档	Python文件窗口和Shell 均可用
+Ctrl+Z	撤销一步操作	Python 文件窗口和 Shell 窗口均可用
+Ctrl+Shift+Z	恢复上—次的撤销操作	Python 文件窗口和 Shell 窗口均可用
+Ctrl+S	保存文件	Python 文件窗口和 Shell 窗口均可用
+Alt+/	自动补全前面曾经出现过的单词，如果之前有多个单词具有相同前缀，可以连续按下该快捷键，在多个单词中间循环选择	Python 文件窗口和 Shell 窗口均可用
+Alt+3	注释代码块	仅 Python 文件窗口可用
+Alt+4	取消代码块注释	仅 Python 文件窗口可用
+Alt+g	转到某一行	仅 Python 文件窗口可用
+Ctrl+]	缩进代码块	仅 Python 文件窗口可用
+Ctrl+[	取消代码块缩进	仅 Python 文件窗口可用
+
+
+python之碰撞检测
+python之边缘检测
+python之画面刷新
+python之音效
+
+<<飞机游戏>>
+流程梳理:
+	
+加载bgm
+播放循环bgm	
+我方飞机生成	
+敌方飞机最大数量interval=0
+while true:
+	if 用户点击关闭按钮:
+		退出
+	
+	interval+=1
+	if interval==50
+		interval=0
+		敌方飞机生成
+		敌方飞机按固定速度从上往下移动,屏幕刷新
+
+
+	if 用户鼠标移动:
+		我方飞机中心位置=鼠标位置
+		屏幕刷新
+
+	if 我方飞机撞上敌方飞机:
+		我方死亡,
+		播放撞击音乐
+		修改飞机图案
+		打印"gameover"
+		淡出bgm
+		退出循环
+

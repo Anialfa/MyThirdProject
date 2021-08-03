@@ -1,0 +1,66 @@
+
+一,安装python,和opencv
+
+	1,在官网上下载安装包,这里用的是python3.6
+
+	2,如果已经在本机安装过其他版本的python,要先卸载.,如果没有就直接双击安装.
+
+	3,开始面板搜索python,找到安装路径.把python.exe所在的文件夹路径添加到系统变量的path中.同时在这个文件夹中打开cmd,输入python -m ensurepip --default-pip.
+
+然后把scripts的路径也添加到系统变量的path中.同时在scripts中打开cmd,输入pip install -i https://pypi.tuna.tsinghua.edu.cn/simple opencv-python,等待完成.
+
+二,开始面板输入idle,打开pthon编辑面板,输入代码:
+
+import cv2
+import argparse
+import os
+def parse_args():
+    """
+    Parse input arguments
+    """
+    parser = argparse.ArgumentParser(description='Process pic')
+    parser.add_argument('--input', help='video to process', dest='input', default=None, type=str)
+    parser.add_argument('--output', help='pic to store', dest='output', default=None, type=str)
+    
+##############################################################
+	#default为间隔多少帧截取一张图片
+    parser.add_argument('--skip_frame', dest='skip_frame', help='skip number of video', default=5, type=int)
+    #input为输入视频的路径 ，output为输出存放图片的路径
+    args = parser.parse_args(['--input',r'E:\xmfOut\Video-20190726-103618.avi','--output',r'E:\out'])
+##############################################################
+    return args
+ 
+def process_video(i_video, o_video, num):
+    cap = cv2.VideoCapture(i_video)
+    num_frame = cap.get(cv2.CAP_PROP_FRAME_COUNT)
+    expand_name = '.jpg'
+    if not cap.isOpened():
+        print("Please check the path.")
+    cnt = 0
+    count = 0
+    while 1:
+        ret, frame = cap.read()
+        cnt += 1
+        #  how
+        # many
+        # frame
+        # to
+        # cut
+        if cnt % num == 0:
+            count += 1
+            cv2.imwrite(os.path.join(o_video, str(count) + expand_name), frame)
+ 
+        if not ret:
+            break
+ 
+if __name__ == '__main__':
+    args = parse_args()
+    if not os.path.exists(args.output):
+        os.makedirs(args.output)
+    print('Called with args:')
+    print(args)
+    process_video(args.input, args.output, args.skip_frame) 
+
+注意代码中强调的段落.1,default=5,可自行修改 2,r'E:\xmfOut\Video-20190726-103618.avi'(和后面的r'E:\out')为视频的输入地址. 3,路径不能有中文
+代码写好后ctrl+s保存,用记事本打开这个代码,删掉无用的起始后缀.保存.
+打开cmd,将修改好的py脚本拖入窗口,回车运行.

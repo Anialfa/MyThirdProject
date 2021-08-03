@@ -1,0 +1,146 @@
+ubuntu16.04安装vnc
+https://blog.csdn.net/longhr/article/details/51657610
+
+常用解压命令
+https://blog.csdn.net/songbinxu/article/details/80435665
+
+删除或修改带锁的文件:
+sudo chmod -R 777 filename
+
+
+
+yolov4 ubuntu配置及训练
+
+当前版本,ubuntu 16.04LTS
+1 准备必要组件: (-1)查看自身gcc版本 
+		(0)安装显卡驱动
+		(1)安装cmake(用于编译opencv扩展模块)
+		(2)配置darknet-master
+			(2-1)安装opencv
+			(2-2)安装CUDA,cuDNN
+			(2-3)安装darknet
+	
+		(3)环境测试
+		(4)训练自己的权重
+		
+		(5)应用
+		
+		
+		(6)LabelImg
+		
+
+	(-1)安装gcc
+	https://blog.csdn.net/Marilynviolet/article/details/100009979
+	检查命令:	gcc --version
+
+	这边的gcc版本是4.8,而驱动要求的是5.4,所以需要先更新gcc到5.4
+	安装gcc:
+	官网下载源码
+	http://ftp.gnu.org/gnu/gcc/
+	解压文件
+	解压后
+
+	cd gcc-5.4.0  //进入解压后的gcc文件夹
+	./contrib/download_prerequisites  //下载依赖项
+	cd ..
+	mkdir gcc-build-5.4.0
+	cd gcc-build-5.4.0
+	../gcc-5.4.0/configure --enable-checking=release --enable-languages=c,c++ --disable-multilib
+	#sudo make //sudo make -j6
+	#sudo make install //
+
+	(0)安装显卡驱动
+	Ubuntu16.04安装英伟达（NVIDIA）显卡驱动详细图文教程
+	https://blog.csdn.net/qq_34525916/article/details/110953980
+	检查命令:nvidia-smi
+
+
+	(1).ubuntu默认的cmake版本可能过低.在安装更高版本之前需要确认是否安装好g++,gcc (安装方法 sudo apt-get install gcc,sudo apt-get install g++).
+	CMake官网:https://cmake.org/download/
+	检查命令:cmake --version
+	安装cmake,这里安装3.19.8
+	https://blog.csdn.net/cocoaqin/article/details/78163171
+	https://blog.csdn.net/aian2132/article/details/107978876
+
+
+	(2-1)安装opencv
+	这边安装的是opencv3.4.1
+	https://blog.csdn.net/Ding_0110M/article/details/88083741
+	https://blog.csdn.net/cocoaqin/article/details/78163171
+	检验方法:找到opencv-3.4.1/samples/cpp/目录下
+执行:	cmake .
+	make
+	./opencv_example
+即可打开摄像头,左上角显示hello opencv
+
+
+
+	(2-2)安装CUDA,cuDNN
+	https://blog.csdn.net/qq_41251963/article/details/109401989
+	(1),安装cuda
+	检查命令:	nvcc -V
+	用教程中的安装包可以顺利安装
+	
+	
+	(2),安装cuddn
+	注意:最好可以把这个文件夹的内容全部拷贝过去,防止后续编译错误
+		命令:sudo cp -r cuda/include/* /usr/local/cuda-10.2/include	
+	检查命令:cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2
+		
+	(2-3)安装darknet-master
+	git clone https://github.com/pjreddie/darknet.git
+	cd darknet
+	make
+
+
+	(3)环境测试
+	https://blog.csdn.net/gzj_1101/article/details/78651650
+	可以用检查语句一个个进行验证,或按照教程中的运行
+
+	(4)训练自己的权重
+	https://blog.csdn.net/weixin_39298885/article/details/111690284
+	生成自己的map,命令要修改路径:
+	python reval_voc.py --voc_dir /home/weihongbing/桌面/yolo/dataset/VOCdevkit --year 2021 --image_set test --class ./data/voc.names results/
+
+
+	(5)应用
+	如果上一步教程全部顺利运行,且进行过教程中的测试,则把教程中修改过的name文件和cfg文件复制到Yolov4detect-master文件夹中。
+	name文件夹放/Yolov4detect-master中，改文件名为coco.names。
+	cfg文件放/Yolov4detect-master/cfg中，改文件名为yolov4.cfg。
+	需要测试的图片放在/Yolov4detect-master/image中，
+
+	运行：在/Yolov4detect-master中打开控制台
+	命令 ./yolov4 image/图片名.jpg
+
+
+
+
+	(6).下载数据标记工具labellmg，
+安装:	sudo apt-get install pyqt5-dev-tools
+	sudo pip3 install lxml
+	it clone https://github.com/tzutalin/labelImg.git
+	cd labelImg
+	make all
+打开:	python3 labelImg.py  #打开labelImg
+	python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]
+选择图片后,点击创建区块,设置名称,保存文件,默认格式是pascal voc 生成的*.xml文件放在图片所在位置.
+
+
+
+
+正前方的洞,frontHole
+管壁	,guanbi
+气泡, qipao
+阀门,famen
+异物,yiwu
+水花,shuihua
+侧孔,ceKong
+油漆,youqi
+
+
+
+
+
+
+
+

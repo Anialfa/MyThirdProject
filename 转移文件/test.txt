@@ -1,0 +1,1330 @@
+
+{
+gpu编程:
+
+	通用并行编程:
+	cuda,opencl,openacc
+
+	图形编程
+}
+{
+显卡编程:
+三种API(应用程序接口,工具库):openGL DirectX Vulkan
+
+shader着色器:阴影光照上色
+	API:GLSL(由openGL提供),HLSL(DirectX提供),SPIR-V(Vulkan提供)
+
+unity的着shader编程语言用的是shaderLab,并非直接用上面三个.而是对HLSL的包装,添加额外的东西(新指令和工具).好处是能自动转化成上述语言,所以能支持所有显卡和操作系统平台.
+
+}
+
+{
+安卓平台的shader编程语言是:openGLES或Vulkan
+}
+
+
+{
+
+
+}
+
+
+{
+封装记录:
+直插电阻,电容:https://wenku.baidu.com/view/552874205901020207409ceb.html
+
+贴片电阻电容:如0805,0603=长0.8mm宽0.5mm:https://www.docin.com/p-1542235749.html
+
+懂王是人类登陆太阳第一人,人类登陆太阳再返地第一人,人类登陆太阳再返地再登陆太阳第一人,人类登陆太阳再返地再登陆太阳再返地第一人
+AD操作
+原理图统一标注：TAA
+恢复默认窗口设置:界面右上角的齿轮,system,view,reset
+原理图纸张大小:在空白处右键,优先选项,Schematic,General,右下角,修改A4
+语言本地化:	右键空白处,优先项设置,System,General,本地化
+旋转45度:	右键空白处,优先项设置,PCB Editor,General,其他,旋转步进
+修改光标样式:	右键空白处,优先项设置,PCB Editor,General,其他,光标类型
+把元件布置在Pcb板背面镜像布局:	拿住元件,按L
+
+使用过孔:	按ctrl+W开始布线,在合适的地方按+,-
+如何检查是否全部布线完:PCB界面右下角,Panels,ViewConfiguration,在打开的界面中把AllLayers关掉检查
+布线的安全间距:	顶层面板设计,规则,Design Rules,Electrical,Clearance-Clearance,约束,双击修改最小间			距后面的N/A
+修改线宽,最小线宽:	顶层面板设计,规则,Design Rules,Routing,Width-Width,约束,双击修改最小线宽
+最小过孔:	顶层面板设计,规则,Design Rules,Routing,RoutingViasStyle-RoutingVias,约束,双击修改
+自动布线:	在keepOut层绘制范围,顶层面板布线,自动布线,全部
+线泪滴:		工具,滴泪,添加,确定
+敷铜:		顶层面板放置,敷铜,或者快捷栏点击敷铜.
+消除绿色告警:	T+M
+pcb中阵列式粘贴:E+A,    先ctrl+X,再点击一个焊盘,再EA
+找到所有同类元件(找到所有电容):右键查找相似元件,点击电容,弹窗第一栏Description右边选择给same,勾选弹窗最下方的选择匹配和创建表达,确定
+批量修改全部元件(修改封装):找到所有同类元件,再修改
+批量修改部分元件:按住SHIFT,点击元件,右键查找相似元件,弹窗的Selected改为Same,勾选弹窗最下方的选择匹配和创建表达,确定
+导入到PCB时报错找不到管脚:有3个原因:1,管脚不对;2,没有封装;3,封装不对
+	1:这个元件的原理图中的流水号是否正确,可以双击元件,选择Pin,双击元件,修改流水号
+	2:选择封装
+	3:封装的pcb图中的流水号是否正确
+
+}
+{电容单位进制:
+1法拉(F)= 1000毫法(mF)=1000000微法(μF)。 　　
+
+1微法(μF)= 1000纳法(nF)= 1000000皮法(pF)。
+
+
+}
+{
+设计流程:1,配pcb库 2,配原理图库 3,原理图绘制 4,器件购买选择 5,pcb图绘制
+}
+
+{unity粒子系统参数介绍详解:
+https://www.cgjoy.com/forum.php?mod=viewthread&tid=211517
+}
+
+软件ExpressVpn
+公司的vpn密码：E94IJ5KQNRXBWUQC85AYLFM
+
+云创享:TangPupu:anniaerfa123
+
+
+
+飞秋的文件保存路径:C:\Users\Administrator\AppData\Roaming\feiq\Recv Files
+hactool.exe -t pfs0 --pfs0dir=Family Trainer [0100A1C012AA4000][v0][JP].nsp
+
+
+hactool.exe base_nca/your_base.nca -k E:\BaiduNetdiskDownload\prod.keys --romfsdir --exefsdir="exefs"
+hactool.exe base_nca/your_base.nca -k prod.keys --romfsdir --exefsdir="exefs"
+
+资源加密算法有什么
+
+C#怎么存储文件？
+{
+C#的Queue用法:https://www.cnblogs.com/xuekai-to-sharp/p/3540709.html
+
+摘要:
+存:Enqueue():在队列的末端添加元素
+取且删Dequeue():在队列的头部读取且删除一个元素
+仅取Peek():在队列的头读取一个元素，但是不删除它
+Count：返回队列中的元素个数
+TrimExcess():重新设置队列的容量，因为调用Dequeue方法读取删除元素后不会重新设置队列的容量。
+Contains():确定某个元素是否在队列中
+
+}
+{
+Bakery环境渲染使用:
+导入资源包,创建场景,导入模型.
+
+对Directional Light操作:给Directional Light添加组件BakeryDirectLight,点击MachLightmappedtoreal-time,取消Light组件的使能.
+
+}
+{
+unity自带的 烘焙 渲染系统
+https://zhuanlan.zhihu.com/p/78706246
+
+}
+{
+unity贴图效果,图片细节,法线贴图
+https://blog.csdn.net/wangkun1340378/article/details/78829636
+
+}
+{
+Bakery GPU Lightmapper 1.8 官方手册
+https://www.jianshu.com/p/b4ca704cc6fc
+
+}
+现成的unity完整资源包怎么破解,导出里面的资源?
+{用unity资源导出工具:AssetStudio.x64.v0.13.21}
+有个现成游戏资源,不是基于unity的框架(文件夹第一层有许多.dll,第二层只有一个名为media的文件夹),其中模型资源都在第二层,名字是media1.xmf,media2.xmf...
+此外还有名为PRJ和SOUNDS的文件夹.如何提取模型资源?
+{
+选择一个media.xmf文件,备份,把后缀名改为.zip
+}
+
+{CG柚子:tangpupu;tangpupu123}
+
+{
+unity好用的插件,参考:
+https://zhuanlan.zhihu.com/p/62471100
+}
+
+{
+现在开始做imu的相关工作.目标:1,与项目的通信;2.实现姿态算法.
+
+1,通信
+找了个案例,已经收藏在csdn里了.
+先抄代码,再看看会出什么问题.
+
+}
+
+{
+整个上海都可以去转吗?
+面积6340平方公里:嘉定区459平方千米，浦东新区1210平方千米，金山区586平方千米，松江区605平方千米，青浦区676平方千米，奉贤区687平方千米，崇明区1185平方千米。
+	
+
+
+}
+
+{
+
+制定旅游计划
+体能恢复计划
+}
+
+{
+手部按摩
+按摩右手为例:
+1,右手手腕背自己,左手大拇指和食指掐住右手手腕关节,左手大拇指发力,能感觉到右手手腕的沙沙声.
+2,右手手腕朝自己,左手大拇指从上到下按压右手手腕
+3,逐个前后摆动掌骨
+4,逐个拉伸指关节,逐个小幅度左右摆动指关节
+
+
+}
+
+vs的界面风格,调整vs界面颜色
+{
+工具-选项-环境-常规-深色
+}
+多桌面操作:windows+tab,选择新建桌面.把东西放到另一个桌面里去,原桌面就简洁许多.
+	快捷切换桌面:windows+ctrl+左右
+
+ps操作,ps快捷操作:
+ctrl+alt+c:修改画布大小
+ctrl+shift+s:另存为
+ctrl+shift+N:新建图层
+alt+鼠标滚轮:缩放
+ctrl+T:旋转单一选中的图片
+快捷复制,点中窗口中的物体,按住alt,拖动
+
+
+{uv动画，参考https://blog.csdn.net/u011047171/article/details/46776713
+（uv位移动画）uv平移动画：平移星空，天空，背景，平移播放广告等
+uv序列动画：火焰，倒计时等
+uv旋转动画：时钟，漩涡，魔法阵
+
+平移动画：可用的代码
+{
+Shader "Unlit/MyShader/UVAim"
+{
+	Properties
+	{
+	_MainTex("Texture", 2D) = "white" {}
+	_ScrollY("Scroll Speed", Float) = 0
+	}
+		SubShader
+	{
+	Tags { "RenderType" = "Opaque" }
+	LOD 100
+
+
+	Pass
+	{
+	CGPROGRAM
+	#pragma vertex vert
+	#pragma fragment frag
+	// make fog work
+	#pragma multi_compile_fog
+
+	#include "UnityCG.cginc"
+
+
+	float _ScrollY;
+
+
+	struct appdata
+	{
+	float4 vertex : POSITION;
+	float2 uv : TEXCOORD0;//=texcoord
+	
+	};
+
+
+	struct v2f
+	{
+	float2 uv : TEXCOORD0; //= texcoord
+	UNITY_FOG_COORDS(1)
+	float4 vertex : SV_POSITION;
+	};
+
+
+	sampler2D _MainTex;
+	float4 _MainTex_ST;
+
+	v2f vert(appdata v)
+	{
+	v2f o;
+	o.vertex = UnityObjectToClipPos(v.vertex);
+	//o.uv = TRANSFORM_TEX(v.uv, _MainTex) + frac(float2(0, _ScrollY) * _Time.y);//_ScrollY控制y方向的速度
+	o.uv = TRANSFORM_TEX(v.uv ,  _MainTex) + frac(float2(1, 0) * _Time.y);//y方向速度为0，x方向速度为1
+	//o.uvScroll = TRANSFORM_TEX((v.texcoord.xy + _Time.x * _ScrollingSpeed.xy), _Tex);
+
+	UNITY_TRANSFER_FOG(o,o.vertex);
+	return o;
+	}
+
+	fixed4 frag(v2f i) : SV_Target
+	{
+		// sample the texture
+		fixed4 col = tex2D(_MainTex, i.uv);
+	// apply fog
+	UNITY_APPLY_FOG(i.fogCoord, col);
+	return col;
+	}
+	ENDCG
+	}
+	}
+		Fallback "VertexLit"
+}
+
+}
+
+
+}
+
+{你先说还是我先说,第一次见面只是碰个头而已,没必要紧张,而且说白了也就了解些基本情况.
+我想在开始之前明确几件事,在问你的同时我也会给出我的答案
+第一件事,你有男朋友吗,或是非常之亲密的异性朋友,
+我也没有女朋友,有一些异性朋友但算不上亲密
+第二件事,这次见面是你家里人逼你来的吗,有没有给你很大压力
+也是,虽然家里人好像很急,但就我个人来讲也不是特别有压力
+第三件事,你想谈个恋爱吗?
+嘛,我是想的,就看我们对对方来讲是否合适吧
+你有啥想问的吗?
+那我先说我的情况xxx;你呢?
+时间也差不多了,要不留个联系方式?
+
+
+}
+
+{
+pixiv:Tangpupu_7:
+
+   
+
+吾爱模拟：wulaofei：wulaofei123
+}
+
+折叠代码块,隐藏代码,
+  #region 上 下 左 右 
+    #endregion
+
+ok,unity脚本中控制字体大小,text的字体颜色,text字体颜色,text颜色,text的颜色:
+ Text_Da.text = "<color=#0000ff><size=60>小明</size></color>送了<color=#0000ff><size=60>小红</size></color>一辆游艇";
+text文本换行
+Text_Da.text ="1111111111111\n6666666666666"
+
+  tip.msg = "解锁这个榨汁机需要花费<color=#69DBE2><size=30>" + List_price[JuiserChoose] + "个钻石</size></color>";
+    tip.msg = "升级需要花费<color=#F3C77D><size=30>" + (int)SqzL[orgLv].UpgradePrice + "个金币</size></color>";
+ 钻石色:<color=#69DBE2>100钻石</color>
+更深蓝的钻石色<color=#042D6C>100钻石</color>
+金币色:<color=#F3C77D>100金币</color>   
+更鲜艳的金币色:<color=#F9D24C >100金币</color>      
+高亮文字 柠檬黄FEF62C
+boss紫红:<color=#EF1E52>Boss</color>
+普通僵尸蓝:<color=#3284EA>僵尸</color>
+沙滩黄:<color=#C49C63>沙滩</color>
+夜晚雪地蓝:<color=#23485A>雪地</color>
+机器人对话文字浅蓝:CFF8F1
+提示橙:FF8D39
+<color=#31CB37>实验室</color>:5名
+<color=#00D5FF>供水厂</color>:5名
+<color=#FF6D00>熔炼厂</color>:5名
+<color=#3284EA>发电厂</color>:5名
+
+虚方法详解,virtual关键字  ,以及部分override用法                 
+https://www.cnblogs.com/zhaoshujie/p/10502404.html
+{简单讲virtual声明的方法就是在后面被子类调用的时候优先执行带override的内容.如果都没有override再执行virtual的内容}
+{虚函数在编译期间是不被静态编译的，它的相对地址是不确定的
+1、当调用一个对象的函数时，系统会直接去检查这个对象申明定义的类，即申明类，看所调用的函数是否为虚函数；
+2、如果不是虚函数，那么它就直接执行该函数。而如果有virtual关键字，也就是一个虚函数，那么这个时候它就不会立刻执行该函数了，而是转去检查对象的实例类。
+3、在这个实例类里，他会检查这个实例类的定义中是否有重新实现该虚函数（通过override关键字），如果是有，那么OK，它就不会再找了，而马上执行该实例类中的这个重新实现的函数。而如果没有的话，系统就会不停地往上找实例类的父类，并对父类重复刚才在实例类里的检查，直到找到第一个重载了该虚函数的父类为止，然后执行该父类里重载后的函数。
+}
+
+{
+从网页拉取图片:浏览器右上角,更多工具-开发者工具(ctrl+shift+I),选择network,刷新一下页面,在下方的框里就会出现当前页面加载的所有内容.
+
+}
+
+{CE教程的攻略:
+{1,打开}
+{2,扫描类型:精确扫描,数值类型4字节(windows默认4字节,以下如未说明,都默认4字节).
+首次扫描数字100,逐次打击并搜对应数字,直至找到并修改}
+{3,扫描类型:未知初始值.点击首次扫描,打击,扫描类型改为:减少的数值,再次扫描,重复不断缩小范围.然后逐个尝试修改.直至找到并修改}
+{4(1),扫描类型:精确扫描,数值类型:单浮点.过程同{2}
+4(2),扫描类型:精确扫描,数值类型:双浮点.过程同{2},双浮点扫描可以禁用快速扫描以提升准确度}
+{5,用{2}找到当前地址,对找到的地址F5(右键-是什么修改了当前数值)进行调试,修改数值,把找到的调用代码全部点击替换,自动换成空指令(双击查看是否被换成了nop),停止关闭,修改数值.<暴力修改,定死数据地址会变化的情况>}
+{6,找到上一步中的汇编代码,点击详细信息,找到rax被赋了什么值,在CE主界面中点击手动添加地址,勾选指针,在下方填入偏移量(若有,否则0)和rax的被赋的值,确定后添加一个指向数值的指针,修改内容然后在把前面的框打上叉表示锁定.<不是看下方rax真实地址,只要看上方rax被哪个地址赋值就行>}{6补充知识,形如[03C12005]这种纯16位数字的叫地址;形如RAX,RCX,全是字母的叫地址指针,方括号也没有的16位/10位数字都叫数值.}
+{7,}密码=013370
+
+
+
+}
+{
+从exe文件中拉取图片素材:忘了
+}
+
+
+
+
+{
+unity的Mathf.Lerp,插值算法:
+
+几何中:A点坐标(0,10,0),B点坐标(10,0,-10),求A点到B点总距离0.4位置的C点坐标
+:V3.Lerp(New vector3(0,10,0),New vector3(10,0,-10),0.4f);
+得(4,6,-4)
+
+让物体跟随目标:
+public float smooth=5.0f;
+void update()
+{
+transform.position=V3.lerp(transform.position,target.positon,time.deltatime*smooth);
+}
+
+让一个数值逼近另一个数值:从当前值逼近目标值
+private float smooth = 0.2f;
+Fill.fillAmount = Mathf.Lerp(Fill.fillAmount, 0.9f, Time.deltaTime * smooth);
+if ((0.9f - Fill.fillAmount) < 0.05f)
+{
+Fill.fillAmount = 0.9f;
+}
+
+}
+{
+小电脑的IP:192.168.2.108
+用户名:admin
+密码:xingjie
+
+}
+{触摸屏的拖动控件demo:
+	1.按钮图片加载,
+	2.在wpf上实时获取鼠标当前位置(x,y),文本框上显示
+	3.实现wpf窗口的鼠标拖拽按钮控件
+4.获取到被拖动控件的实时位置
+5.被拖动控件在鼠标放松后,自动回到原位
+6.文本框上显示控件实时位置
+7.文本框显示控件相对位置
+8.文本框显示控件相对方向,相对位移
+9.实现多点触控
+
+{3.用到thumb控件,引入名称空间using System.Windows.Controls.Primitives;
+
+
+}
+
+}
+
+{
+Switch游戏资源破解后,如何将模型文件导出
+概念:
+工具:
+实际过程:
+代码:
+
+补充:{C#知识:sizeof:用来计算类型的大小,单位是字节,看https://www.cnblogs.com/darrenji/p/3976029.html,
+char类型16位,2字节,int类型32位,4字节.
+}
+
+查看规则:
+界面:地址(十进制)=地址列,无符号整数(四字节)=第一列,文本(ASCII)=第二列
+Readstring(sizeof(int)*9):第一列,每一个地址中放2个四字节,代码意为从调用位置			开始往后数9个四字节.一个int就是一个四字节
+ReadUint32():从调用位置开始,将第一列的1个四字节数据转为uint32类型数字.比			如,0000000012,转化后就是12.
+ int value=filename.Indexof(".bfres"):从filename中找到第一次出现".bfres"的位		置,数值从0开始计算.比如,返回9,就是说指定字符串是在总字符串		的第10位开始第一次出现.
+ temp=temp.Remove(6):把temp字符串中从第6位的字符开始删除后面的所有字符.计数		从0开始.删完后需要再赋值回去.
+
+loader.position:当前指针所在的地址.返回对应的地址列的数字.如果		让Loader.position=0,就是指文件从头开始读.
+
+
+
+}
+
+{unity的图片打包成图集,图集制作:
+目的：在Unity的编辑模式下，就可以自行对Unity的图片打包成图集。
+第一步：先将Unity的图集打包工具的模式设置为Always Enables(Legacy Sprite Packer)。
+第二步：对想要打成一个图集的所有Sprite设置同一个Tag。
+第三步：打开图集打包工具窗口进行打包   
+Edit -> Project Setting -> Editor -> Sprite Packer -> Mode -> Always Enabled(Legacy Sprite Packer)
+点击图片,在右侧参数设置里将PackingTag修改为统一
+Window -> 2D -> Sprite Packer
+有一段代码:在把图片移到Unity目录下的时候 会将Packing Tag设置为该目录文件名
+using UnityEngine;
+using System.IO;
+
+public class AutoSetTag : MonoBehaviour
+{
+    void OnpostprocessTexture(Texture2D texture)
+    {
+        string assetPath = "文件夹的具体路径";
+        string atlasName = new DirectoryInfo(Path.GetDirectoryName(assetPath)).Name;
+        Debug.Log(assetPath +""+ atlasName);
+        TextureImporter ti = assetImporter as TextureImporter;
+        ti.textureType = TextureImporterType.Sprite;
+        ti.spritePackingTag = atlasName;
+        ti.mipmapEnabled = false;
+    }
+}
+
+}
+
+双冒号操作符,::
+两个冒号表示作用域操作符。：：操作符在其左操作数的作用域内找到其右操作数的名字。用于访问某个命名空间中的名字，如std：：cout，表明名字cout来自命名空间std。同样的可以用来从某个类取名字，如string：：size_type,表明size_type是string类定义的
+
+减号和大于号操作符,->
+"->"相当于结构体变量后的"."，只不过"->"的左边是指针，"."左边是普通变量。
+{
+字典,不用写static,就可以在外部调用,但是每次重新开始好像要clear
+}
+
+psd导入到unity:
+1,找到psd2unity的unitpackage,(E:\work\Psd 2 Unity uGUI Pro 3.4.0(u2017.4.2))拉倒unity中;
+2.把Photoshop Scripts文件夹下的脚本Psd 2 Unity Pro - Digest拷贝到PhotoShop的插件目录下，Windows的目录如下：[Adobe Photoshop Installation Path]\Presets\Scripts\
+3.用ps打开psd文件把需要的图像名字后面加上"=png".不区分大小写,名字中可以包含中文
+4.一般不会报错,如果报错可以尝试将psd文件保存一下,再重新检查上述步骤.等它成功导出后,会生成一个文件夹以及一个js文档.文件夹包含所有刚才标记的png图片,js文档包含所有图片的排列方式.
+5.将生成的两个文件拉入unity中的某个文件夹中
+6.在js文件上右键,选择set as PSD 2 Unity...
+7.选择Struct File(Js文件);选择Assets Folder(Img文件夹);Root(一般是场景中的某个Canvas)
+8.等待生成,可能会有个别img报生成失败,之后重新手动导入即可
+
+
+
+
+C:\Windows\SysWOW64\Macromed\Flash
+删除flash广告弹窗
+
+.SVN:姓名:姓名
+飞秋的保存文件路径:C:\Users\Administrator\AppData\Roaming\feiq\Recv Files
+钉钉保存文件:E:\接受文件\榨汁僵尸机
+exle2json:E:\work\excel2json_120\Release
+
+极暗地牢:{在steam上做个人物mod:https://www.wukong.com/answer/6528552211700515079/
+
+人物:
+技能1:尚武之魂:位置1234,可用次数1,目标自身.提升自身攻击30%,破甲20%,速度10%,精准10%,暴击5%,防御10%,位移抗性30%,眩晕抗性30%;降低自身流血抗性50%,疾病抗性50%,腐蚀抗性50%;持续三回合.
+技能2:寸劲:位置1,目标1.伤害修正5%,基础命中130%.击退2(基础概率100%),破甲20%;队伍-2压力如果激活侠义;增加10%伤害如果激活舍身;
+技能3:冲锋陷阵:位置1,2,3;目标1+2+3;伤害修正-30%前进1,基础命中130%,队伍-2压力如果激活侠义;+10%伤害如果激活舍身;增加位移抗性20%;
+技能4:侠义:位置1234,可用次数1;队伍-5压力(基础概率70%),自身-15%承受压力伤害,直到战斗结束
+技能5:舍身:位置1234,可用次数1;队伍-3压力(基础概率50%),向前2,自身+10%防御,+25%致死抗性,标记自身,直到战斗结束
+技能6:人定胜天:位置12,自身恢复4~8,+15%命中;如果队伍满员且无人折磨:队伍-5压力(基础概率70%),队伍+5%伤害,+5%防御.
+
+营地技能:
+传统医学:治疗目标15%生命;+5%攻击,持续4战斗(40%概率),+5%防御,持续4战斗(40%概率),消耗2
+修身:自身,移除负面效果,+10%速度;+10%命中;+10%闪避;+30%疾病抗性(50%概率),持续4战斗,消耗3
+养性:自身,-30压力,-20%承受压力伤害持续4战斗,队伍-10压力(40%概率),消耗3
+齐家:队伍里异性角色,-15压力,恢复4~6生命,-15%承受压力伤害持续4战斗,+10%精准持续4战斗,消耗4
+治国:队伍里同性角色,-15压力,恢复4~6生命,+10%伤害,+10%防御持续4战斗,消耗4
+平天下:全体,每杀死一个敌人自身-5压力,恢复2生命,持续4战斗;消耗4
+
+城镇事件:这位来自东方的旅者追寻着真理来到这里,目光坚定,仿佛能穿透这里的阴霾.
+然而他会不会也被黑暗吞噬,就像其他人一样,没人知道.
+
+专属怪癖:
+正面:
+基建狂魔:城镇的升级消耗和建造消耗-5%;
+群众基础:队伍满员时,队伍+3%精准,+3%暴击,+3%伤害
+厚积薄发:每有一个回合不攻击,增加5%伤害,下次攻击后解除
+狭路相逢:
+
+负面:
+劣徒:因达不到目标而深深自责,+25%承受压力伤害
+丧失理想:-10%压力治疗,-10%致死抗性
+
+}
+
+
+{
+当你盯着电脑时，阿拉斯加的鳕鱼正跃出水面；当你愁眉发呆时，梅里雪山的金丝猴刚好爬上树尖；当你挤地铁时，西藏的云鹰直入云端；当你与上司争吵时，尼泊尔的背包客已端起酒杯围在火堆旁。这个世界，有一些穿高跟鞋走不到的路，有一些喷着香水闻不到的空气，有一些在写字楼里永远遇不见的人…
+}
+
+vs快捷操作
+ok,基本上,只有在文件浏览器中才用"\";其他地方都用/表示路径.
+ok,ctrl+H批量修改xxx为XXX
+ok,ctrl+m+o,快速折叠
+ok,ctrl+m+L,快速展开
+ok,ctrl+m+M,快速展开或折叠当前方法
+
+ok,为什么运行后会报一个可以清除的错误?多添加了一个无效的脚本.
+当前node选择的代码是如何实现功能的?
+特效代码如何实现?
+键盘读取按键的功能如何实现?
+
+
+ok,1:开始运行时显示UI,不运行时不显示UI.调用showorhide动态生成
+ok,2:光标默认待在A按钮,鼠标移动到按钮上不做任何交互//在脚本中编写了一个特定的名称号,用以确定当前节点是否被选中了.按钮功能不需要被屏蔽,直接用代码功能来实现.//代码如何实现?
+ok,3,在相应按钮上按下enter后松开,打印相应按钮名字.按钮功能绑定
+ok,4,下方还有退出和跳转按钮,按下相应按钮实现退出和场景跳转
+
+
+3.ngui
+4.dotween使用
+5.C#
+6.xml表格,配表
+7.LUA
+8.
+9.xml编辑
+10.
+11.熟练掌握UGUI，LUA，1年以上大型网络游戏开发经验，主要负责UI模块开发
+
+ok,移动带的默认位置如果设定为transform.position则可能出现移动异常.一般用transform.loaclposition
+ok.如何获取子物体身上的组件。当遍历自身后没发现目标则继续在子物体身上寻找。直到便利所有子物体。find(A).find(B).find(C)...
+ok.代码整理干净,bug自动消失
+ok.字符串检测:string1.contins(string2);
+ok.学代码第一步,整理代码
+
+rose通信?火萤视频桌面
+
+ok.如何实现按钮根据焦点的位置在特定区域内滑动.滑出范围的部分不渲染.//不渲染的部分,可以通过给父物体添加mask解决//尝试在Hierarchy中创建ScrollView解决.可以实现鼠标拖拽.如何实现根据焦点位置的拖拽?//放弃使用ScrollView.改用按键带的方式,设置上下两个标志位.当此时的按钮位置低于下标志位时进行附加条件的按键带上移(反之同理).附加条件是按键带的此时位置是否到底了.
+
+ok.设置当前焦点在某个按钮身上.如果这个按钮位置不在根路径下,要如何设置?//m_key.setCurKey("Button0");,这一句就可以,但是要在start()重写继承之后.只要当前界面中有这个Button就行,不需要考虑路径.因为重写start后会自动获取当前页面中所有的按钮.
+
+ok.利用find函数查找不在根路径下的target.要用Find("A/B/../target")的格式才能找到target;同时,如果要用循环的方式找到带序号的多个tgt,Find("A/B/../tgt"+i),i从第一个到最后,不需要让i变成string类型
+
+ok.游戏暂停:Time.Scale ＝ 0;可是暂停的时候UI如果需要继续有动画怎么办呢？在DoTween中只需要设置         tweener.SetUpdate(true); 即可。意思就是这个Tween是忽略TimeScale，如果不写的话 tweener.SetUpdate 是 false。http://www.xuanyusong.com/archives/3330
+
+按钮常用方法:  
+m_key.setCurKey("Button");
+string name = m_key.m_key.getName();
+string name = getCurButton().name;
+
+用家里的案例试试:不同button实现不同信息的外部调用读取.用代码做按钮选择可能不能用,尝试删除无用代码,如果还不能解决就算了,用鼠标点击按钮的方式打印输出.
+
+如何在unity中保存文件
+anniaerfa6537829
+s 18163928916
+序列帧动画,uinty自带动画
+ok,状态机动画:https://blog.csdn.net/zhenghongzhi6/article/details/106459895?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160697264919724839562748%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=160697264919724839562748&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v1~rank_blog_v1-1-106459895.pc_v1_rank_blog_v1&utm_term=Unity%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F%E8%AF%A6%E8%A7%A3&spm=1018.2118.3001.4450
+ok,状态机脚本控制:
+先获取目标物体上的animator组件.
+然后Animator.SetBool("状态机中设置的标签名字",bool);
+
+状态机动画控制具体播放哪个动画
+
+游戏上线前需要对这几个进行测试:内存,cpu,fps,像素
+
+ok,	<1>从外部获取到列表文件,保存在某个变量下.在Datamgr的init()中读取,然后要调用init()才能使用.
+	<2>调用这个变量
+	
+ok,DoTween控制颜色改变:    Img_Add.DOColor(color, 0.1f).SetLoops<Tween>(2,LoopType.Yoyo);
+    dotween控制大小缩放:Img_Left.transform.DOScale(scale, 0.1f).SetLoops<Tween>(2, LoopType.Yoyo); 
+	dotween实现延时调用方法: DOVirtual.DelayedCall(0.5f, 方法名);
+
+ok,messageTip回调的格式:
+ MessageTip tip = new MessageTip();
+  tip.msg= "text";
+   tip.ok = () => {  };
+   tip.no = () => {  };
+private void ok()
+    {
+        tip.ok?.Invoke();
+    }
+private void no()
+    {
+        tip.no?.Invoke();
+    }
+
+ok,字典的一个键对应多个值是可以实现的,但是多个值必须放在list<>列表中,换言之,在字典声明时是做了一个键对应一个列表的操作
+ok,用二维数组的形式来存储数据,声明:private Image[][] IMG_text=new Image[3][];IMG_text[0] = new Image[4] ; IMG_text[1] = new Image[4] ;IMG_text[2] = new Image[4] ;
+	
+关于玩家信息(金币,钻石)的设计逻辑?先建立一个文件用于保存玩家信息,当后续用到时就更新和调用这个文件.
+	
+ok, 关于通过一个文件中的某个信息,读取另一个文件的信息.
+ 
+ok,沟通的关键点是把自己的工作进度和把自己要去做什么告诉其他人
+
+ok,读取文件时报错:InvalidCastException: Instance of JsonData doesn't hold an int
+可能是因为js文件中某个参数写了小数,但是脚本中用的是int类型去指定这个数
+
+ok,unity 怎么从一个ALPHY脚本(继承了A类)访问另一个BETA脚本(也继承了A类)中的参数?
+把beta脚本当做普通的类.在alphy脚本中声明一个这个类的变量,再点出相应的参数即可.
+具体是先搞清楚那个脚本在时间上先运行的,假如已经确定了是Beta先运行的,那么我们在alphy中声明一个static修饰的方法Move(),并且具有传入参数 item.	
+	然后在beta中调用这个静态方法ALPHY.Move(target);
+	但此时Alphy中并没有使用这个target.我们还要在Alphy中声明一个static修饰的变量用于存储.现在的实例是直接存储target值(如果是个表达式也是可以的).
+	但不论存放什么,都已经从Beta中拿到了目标.
+	
+ok sprite图片切割后怎么导出?切割完后感觉和正常使用的sprite是不一样的,只有网格.网上全部都是要用到脚本,有没有不需要脚本级可以导出的方法?图片,图集,图片截成,图集切割
+ 在Inspector面板中把SpriteMode改为Multple,在SpriteEdit中切割成想要的;然后Advanced点开,勾选里面Read/WriteEnable.在下面Default中把format选为RGBA 32bit.或者realColor(如果有的话)
+ 接着新建一个脚本,挂在场景中任意位置,选中你要处理的图片,选中你要处理的图片,选中你要处理的图片,再点击顶层Tools中的"导出png图片"
+ 脚本内容为:
+using UnityEngine;
+using UnityEditor;
+public class SpriteEdit: MonoBehaviour
+{
+    [MenuItem("Tools/导出精灵")]
+    static void SaveSprite()
+    {
+        string resourcesPath = "Assets/Resources/";
+        foreach (Object obj in Selection.objects)
+        {
+            string selectionPath = AssetDatabase.GetAssetPath(obj);
+
+            // 必须最上级是"Assets/Resources/" 
+            if (selectionPath.StartsWith(resourcesPath))
+            {
+                string selectionExt = System.IO.Path.GetExtension(selectionPath);
+                if (selectionExt.Length == 0)
+                {
+                    continue;
+                }
+
+                // 从路径"Assets/Resources/Sprite/number.png"得到路径"Sprite/number" 
+                string loadPath = selectionPath.Remove(selectionPath.Length - selectionExt.Length);
+                loadPath = loadPath.Substring(resourcesPath.Length);
+
+                // 加载此文件下的所有资源 
+                Sprite[] sprites = Resources.LoadAll<Sprite>(loadPath);
+                if (sprites.Length > 0)
+                {
+                    Debug.Log(sprites.Length);
+                    // 创建导出文件夹 
+                    string outPath = Application.dataPath + "/outSprite/" + loadPath;
+                    System.IO.Directory.CreateDirectory(outPath);
+
+                    foreach (Sprite sprite in sprites)
+                    {
+                        Debug.Log("Export Sprite：" + sprite.name);
+                        // 创建单独的纹理 
+                        Texture2D tex = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height, sprite.texture.format, false);
+                        tex.SetPixels(sprite.texture.GetPixels((int)sprite.rect.xMin, (int)sprite.rect.yMin,
+                        (int)sprite.rect.width, (int)sprite.rect.height));
+                        tex.Apply();
+
+                        // 写入成PNG文件 
+                        System.IO.File.WriteAllBytes(outPath + "/" + sprite.name + ".png", tex.EncodeToPNG());
+                    }
+                    Debug.Log("SaveSprite to " + outPath);
+                }
+            }
+        }
+        Debug.Log("SaveSprite Finished");
+    }
+}
+
+
+ok,sprite切割后的图片方向不对,怎么处理?	在image附加这个sprite,在旋转image即可.
+	
+应该如何将Resource.Load的使用次数减少?
+用UI_TipDan.ShowOrHide(true, "您的等级已满!")这种方式,或许可以减少大量resources.load的使用
+在dataMgr中用resource.load调用完,封装成方法或者列表,字典等,在外部调用
+
+人无远虑，必有近忧,所以对许多问题，超前地进行思考和规划，非常之重要
+
+ok,进入时刷新全部的等级条失败,必须要光标点上去才会刷新.原因是一开始调用的刷新方法的刷新目标只有默认的第一个.曾经出现过一次,用循环刷新的方式就可以解决.	
+ok,别人的代码不一定比自己的更好.因为没人比自己更懂手上的项目.	
+ok,1.怎么获取当前按键对应的武器信息?如等级
+ok,2.确认每次升级时,信息保存到了哪里?可否读取?
+ok,3.为什么找不到按钮?
+ok,4.当等级升到最高后,这个升级按钮有没有被锁定?在哪里锁定?锁定后为何还能再次按上键?
+ok,循环刷新后,再多刷新一次就好了.1.进入后,武器图标显示的并非第一把武器.而是最后一把武器.
+ok,取消该逻辑.2.在1栏和2栏的位置时无法按上键,提示找不到按钮.
+ok,新建可保存的游戏数据,用于判断武器等级是否满了.3. 1,2栏都满了,依然可以按上
+ok,在1栏时,如果2栏满,返回4.当2栏满,焦点在1栏时,按下,为顺位向下.没有返回原来按钮
+OK,商店界面,焦点在按钮上时,字体改变颜色.
+OK,用dotween做好了,按下按钮时,购买按钮up消失,松开后出现
+ok,在不同的界面按下购买按钮时,弹出不同的购买内容
+ok,问题:选中以后字不亮
+ok,问题:In方式中,不论选择何种运动模式,实际运行后都是瞬间到达目标点
+   解决办法是在控制脚本中把edable关闭,再通过协程调用运动方法 
+ok，代码注释:yield return new  WaitForSeconds(1.0f);//启动后，会在这句话处停留1.0f秒
+okTITLE从上方进入,阴影同时从下方进入,然后缓慢进行大小缩放;
+ok,玩家从title后面探出头,然后会持续循环抖动(模拟笑的动作);
+ok,然后灯光循环闪烁,同时按钮:缩放进入?
+
+每一个僵尸都要一个结构体用于存放信息.星级,获取时间,升级时间,体,力,智,敏,精,在何处工作,可以用在什么地方
+
+
+
+1,榨汁机页面是否只有两张?(在实际游戏中往下拉有很多张)
+2,工厂(比如发电厂)是否只用一个外观?(实际游戏中,不同等级有不同外观)
+3,地图选择界面的背景图片没有,战斗时的背景图片没有.
+4,僵尸的图片没有.产品(饮料,点心等)的图片没有.
+
+
+ok,选用 方案1.主界面上按照原先方法移动:根据按钮位置判断
+方案2.焦点移动到"上下",在相应位置按确定后再移动
+
+DateTime继承自名称空间using System;
+
+定时器代码:(指定时间间隔执行一段代码)
+　function Start () {
+　　StartCoroutine("DoSomething");
+
+　　}
+
+　　function DoSomething () {
+　　while (true) {
+　　//需要重复执行的代码就放于在此处
+
+　　print("DoSomething Loop");
+
+　　//设置间隔时间为10秒
+
+　　yield WaitForSeconds (10);
+
+　　}
+
+　　}
+
+整个程序会在yield这里停顿10秒,可能包括飞碟的位移也会被暂停.继承自monobehaviour.
+
+
+问题:要用GUI Animator来做动画,但是GUI Animator怎么使用?
+是否每一个动画都必须用GUI Animator来做?
+
+如何根据焦点进行动画播放?
+
+字体旋转进入场景的动画原理是怎样的?制作步骤?
+字体淡入?
+
+操作:在UI_begin中添加了协成
+    public GUIAnimFREE[] donghuas;
+        StartCoroutine(MoveInTitleGameObjects());
+  IEnumerator MoveInTitleGameObjects()
+    {
+        for (int i = 0; i < donghuas.Length; i++)
+        {
+            donghuas[i].PlayInAnims(GUIAnimSystemFREE.eGUIMove.Self);
+        }
+        yield return null;
+    }
+
+物体上设置动画模式.Generate不可以按.
+	如果按了以后,现有解决办法是这个项目完全删除.重新新建一个项目,把需要的资源逐个移植过来
+	删除文件特定夹无效,推测是unity编辑器已经标记了这个文件,于是该文件(G Aui.cs)的所有映射都会使用原设置.
+
+GUI Animition的使用:
+分为G Aui 和G Sui两个部分,前者控制物体的具体运动方式,后者对前者进行总体管理.
+
+G Sui参数说明{
+GUI Speed:物体运动时的速度.值越大,移动/缩放/旋转/渐变的速度越快.
+Auto Animation:勾选后自动播放动画,不选时下面两项不起作用.
+Animation Mode:自动播放时,指定播放G Aui中的何种模式进行播放.
+IdleTime:在自动播放时,指定一个动画与另一个动画之间的间隔(秒).
+
+}
+G Aui参数说明{
+General:对于某些Unity版本,按下后将进入空引用异常BUG,目前无法修复.
+如果错按解决办法:重新新建一个项目,把需要的资源逐个移植过来,将这个旧项目删除.
+In:MoveIn勾选后,在From中选择一个起始点方位,物体当前位置为最终位置.运行游戏后,物体会从起始位置用MoveIn(平移)的方式到终点位置.
+同理其他In的方式,都是从From值开始,变化到当前值.
+
+Idle:
+Out:
+Settings:
+}
+
+
+ok，自动进入。怎么进入Idel状态？是自动进入吗？
+焦点在按钮上时，如何播放动画？
+1.程序是怎么知道焦点在这个按钮上的？
+2.在这个按钮上时，如何调用方法？
+
+问题：为什么开始播放动画后，有些动画会播放两次？
+	答：（如果GAui中的time）/（GSui中的GUI Speed）<1,则会播放超过1次的动画。前者：动画持续的总时间/每一轮动画的播放速度=可以播放的次数
+
+{在上海本地基本不可能找到,除非再换工作才有点机会,这样相当于又是重新开始}
+{要回去的话,实在没有合适的岗位}
+{要么运气好,对方能主动来说话,甚至邀请;要么慢节奏网恋}
+{期待对方主动搭话,概率太低;网恋难度会降低些,实际上更容易操作}
+{对方的现实因素,可能现实中也没有合适的人选,性格内向成为阻碍;我的现实因素没有合适人选,家庭负担}
+{一直是我主动发起对话,对方被动回答,不免让人感觉有些灰心;对方在等我方的发起对话,概率为50%-60%;对方完全不打算继续以及放弃的想法在20%上下,忐忑和不安的想法占40%-50%,其他想法在30%-40%}
+{完全不清楚对方空闲时间是做什么,不清楚会不会答应一起来玩游戏,但不妨试着邀请}
+{若答应,则可以继续;若强硬拒绝并表示反感,则果断退出;若婉言拒绝,原因包括而不限于不会玩,没意思,怕耽误工作等,则尝试转换对应的话题.例如,不会玩:我可以带你玩,虽然我自己也不是很厉害就是了;没意思:我觉得游戏另一种形式的艺术,我是做游戏的所以我知道,如果是艺术那和看剧看小说之类的是一个意思,只是形式上更多样,为什么不试试呢;怕耽误工作:游戏只是生活的润色,任何时候都应该以生活为重,轻重缓急我想你应该有能力分的清吧.注意这一条暗含坚定拒绝之意味,若再次婉拒就作罢.最后一条:没时间:我方最好能分清对方是否真没时间,若真,则下次再邀;若假,按上一条处理.所以在开始邀请前,先问下对是否下班,是否有空等基本信息.此时也可大致推算对方平时作息.
+}
+{
+以上,若答应,或成功邀请到,则进入普通朋友阶段.
+若失败,则结束.
+}
+{
+检讨,我的行事风格目的性很强,好处是追求最高效的解决方案,坏处是容易想得太简单触犯隐形规则.
+需要有其他人帮忙指正,或是自己非常之小心.先阶段只有后者.
+}
+
+{不死者行军
+
+讲个笑话:几年前,美国带领日本,澳大利亚,加拿大以及东南亚相关国家一起达成了一个叫TPP的协议,就是这些国家相互之间的贸易可以交更少的关税,换言之大家就在这个小圈子里做交易不要或者少和其他国家做交易.这里的其他国家就是中国.当时提出TPP的目的是为了围堵中国.然后办了几年,美国发现自己国内的产业尤其是农业并没有得到实惠,政府在农业州的支持率逐年下降,于是特朗普上台的第一件事就是退出TPP.
+
+当年的发起者自己退出了.扔下一圈小弟说你们玩吧,我先撤了.
+
+美国走了,日本上来,在TPP协议的基础上,组织一个相对小规模的CPTPP.说是为了维护自由世界的价值观.你品品,自由世界?那谁是不自由的世界?还是中国.但没了美国老大,经济总量和贸易规模都不再如从前.
+
+然后前几天11月15号,东盟十国和中日韩澳新,15国(本来还有印度,后来印度盘算一下自己没好处,就退出了).就这十五国签署了RCEP协议.这个协议前前后后谈了8年,最终达成,简单讲就是把相互间的若干商品的关税大幅缩减甚至取消,以促进区域经济.RCEP的覆盖人口占全球30%,GDP规模占全球30%,可以说是历史上规模最大的协议.
+
+西方一直说中国在主导RCEP,但中国没有在主导这个,因为这个协议最早是由东盟十国提出的.虽然中国的分量在里面占了50%..
+
+重点来了,,前段时间拜登不是基本上赢了大选吗,他还说要在上台后也就是明年2月份重返亚太.于是乎就在11月20号,习近平说中国将积极参加CPTPP.一般研究者瞎说是没关系的,不管事,国家领导人说的话就要重视,因为那是管事的.那他说加入CPTPP啥意思?还记得tpp是干啥的吗,围堵中国的.还记得cptpp干啥的吗,维护自由世界的.现在反而中国要加入cptpp了.围堵中国的领头人自己退出不玩了,被围堵的反而上去加入了围堵阵营.魔幻.乘拜登没上台,先把坑给占了,而且Rcep才刚签署一星期不到,不得不说下手真是快啊.
+
+{
+不良媒体记录:
+新京报:1),2020/5月,捏造“钟美美”当时为初二的学生,(模仿老师走红)被教育局约谈,意图渲染教育局为维护教师形象对学生行为进行打压.
+	2)2020/12/18,称在浙江金华市区吾悦广场蹦床上玩耍的7岁小男孩无故殴打四名外国10岁小女孩,重点刻画男孩父亲不愿意让孩子道歉的场面,并捏造小男孩边打人边喊:"死老外,不要在我们中国的地盘,滚出去!"等言论,意图渲染民族主义的危害.事后发现是四名外国小女孩先挑事,此前已经欺负了除小男孩外的多名小孩.
+另:不久,(看到时的日期为2020/12/24)公知石述思,于微博上开始炒作该事件.
+  澎湃网:1)2020,11月,造谣海南某落网官员为林则徐后代
+
+}
+{
+对于"公知",就结果而言,他们都会把舆论引导向一个不好的方向(即便其中有部分人初衷并不如此),同时又不会拿出一个可行的解决方案.有些是看见社会上的某些事件或是道听途说,有感而发,彰显文采.有些是受人(组织,机构)指使,刻意进行避重就轻,断章取义,偷换概念.有些则本身不坏,就是手太懒,不想去找清事实.社会需要有人发声,不一定响亮,但一定不会混杂太多目的性,只为事实发声,刚好传入需要接收它的耳朵里.
+}
+
+}
+
+晚上一定要学着
+负责游戏逻辑和UI逻辑的开发.
+
+
+{
+检查一个物体是否开使能,检测是否setactive():
+if (btn.transform.Find("Unlock").gameObject.activeSelf==true)
+
+
+
+}
+{
+通过封装为属性的方式,可以保护字段不被任意修改或修改时间上造成冲突
+
+}
+
+
+给个完全解释:按钮被关使能后,还能不能通过上下左右移动选择到这个按钮身上
+
+原来的是在哪里保存等级信息的?原来的解锁状态在哪里保存
+原来是调用DM中的一个方法进行保存是否解锁,是否满级
+
+BUT_OK:先判断是否解锁:何种满级状态;何种未解锁状态.
+
+
+装备解锁后对应的解锁图标要隐藏.但是相应的图标每一个按钮下面都有.
+所以要先遍历所有按钮,得到各自按钮的锁定图标.
+在解锁这件装备后通过序号equpchoose来让相应图标隐藏.
+{ok,遍历获取,名字符合就关使能}
+以及,每个按钮下又有等级对,用同样方式获取后,再刷新.
+{ok,在start中获取所有的按钮,存放于list中,在刷新等级条的方法中更具按钮序号来获取按钮,或者它的子物体.}
+做序列帧动画,其实不需要自己写脚本.
+
+ok,通过Transform找到子物体后,为什么无法对这个子物体GetComponent<Gameobject>()进行setactive操作?
+会报错:这个物体没有GameObject.
+因为这个物体可能没有<GameObject>组件.如果要关使能的话直接用:子物体.gameobjecf.setactive()即可.不必特地去获取<GameObject>组件
+ok,刷新的时间没有搞清楚.一栏升级按下后却二栏进行升级;在1栏按下升级,一栏没有升级;
+ok,注意,在升级按钮上的绑定事件执行时间要晚于ok()方法中的时间.所以在ok()方法中的刷新方法放在解锁装备方法旁边.其他时候按下ok()不刷新.升级时的刷新方法放在按钮事件中.				
+ok,name和id的引用搞混了,以为name还是用xxxx,但实际上已经换成了int+""的类型.升级超过限制后报错,保护没有起作用.
+
+ok,问题:
+m_key.SetCurBut("Button1") 与m_key.SetCurBut(Button1)有什么区别?两者功能相同.
+ok,设置到这个按钮上后,有没有可能仅仅是让那个按钮的特效显示了,但实际上的功能没有过去?完全转过去了.
+
+问题:
+1,如果某件装备一件解锁,我在这件装备处按下ok,同时已经升了一级.我预想的仅仅是让这个方法和Up一样实现上移.
+{ 取消这个功能 }
+2,如果多件装备一件解锁,我进入这个界面后这些装备对应的等级条刷新不正确.
+{可能是id的传入值没有替换我下面用的equpChoose}
+3.如何显示花费xx金币/钻石进行升级?
+{每次升级时都新建并读取e_Dteail.}
+4.start初始化按钮等级条时,如果最大等级是6级时,没法设置到真确的位置
+{name和id的引用搞混了,和上面那个同样的错误}
+
+
+
+ok,主界面中上下移动时,右边会显示当前位置.
+按下确定进行解锁后,显示解锁了的榨汁机
+已经解锁的榨汁机会播放动画
+*当前页面在这里时才会播放动画,切换页面后动画暂停
+
+ok,动画:普通状态下,僵尸头浮动,,进度条增加
+ok,加速状态下,浮动更加剧烈,光晕闪烁,星星闪烁,进度条加速
+
+动画切换逻辑,设置按钮按下后切换动画.
+
+问题:当"ui_texiao"这个物体不在按钮的根路径下时,我选中这个按钮能不能触发特效?
+
+
+制作顺序:按钮左右移动功能,以及按钮带的正常位移;
+在Damger中新建相关结构体,新建相关字典以及js调用,GameData调用和初始化,新建接口.
+新建一个方法用于Id_2_Name.
+循环遍历所有按钮,获取到所有按钮的Transform.以及每个Item的相关基本信息Detail的列表.
+
+页面刷新的大方法中,固定的几个img,text的刷新,如Title和item,产量等;
+
+
+{装备,有用到AllEL,调用js时需要循环遍历和添加,再声明的一个外部接口,直接返回AllEL[name]结构体,}
+{
+外部接口包括:从GameData中检查是否有这件装备;
+返回AllEL;
+传入名字,从gameData中获得并返回每一栏的int等级;
+返回装备细节的结构体;
+设置等级
+}
+
+发现的一个数学规律:在寻找show和add的数字时,例如第一级是[10*5],第二级是[12*6],n那么show=50,add=22
+于是,第三级13*7的add该用什么算式来表达?不可能每一级都先算好的.
+10|	12	10	10
+5 |	5	4	3
+show----------------------------
+50|	60	40	30
+add------------
+  10  -10 -20 
+所以:把大的数(高等级)写在左边列,小的数(低等级)写在右边列
+12	10
+6	5
+-----
+  6*(12-10)+10*(6-5)=22
+第三级:
+13	12
+7	6
+-------
+7*(13-12)+12*(7-6)=19
+再如:
+13	12
+5	7
+-------
+5*(13-12)+12*(5-7)=-19
+结论,都符合上面的方法.
+
+问题:
+ok升到满级后要隐藏升级按钮.
+ok,用钻石解锁后按钮上的解锁图标没有隐藏.
+ok,如果这个按钮一开始是隐藏的,那么setCurBut()就没法设置到这个按钮上,让它一开始的时候显示就行.等级达到时没法锁定到But_BUY
+ok,问题:	用break会退出到哪里?答:会终止循环而执行循环语句后面的代码.在多层循环中，一个 break 语句只向外跳一层.
+	for1{for2{for3{break;}}}退出到哪里?解除一层循环,到for2内
+	for{if1{if2{break;}}}退出到哪里?到for的外面
+	if1{for{if2{break;}}}退出到哪里?解除for循环,到if1内
+
+
+
+
+地图选择界面的制作步骤:
+1.按钮上下左右选择功能
+{
+右极限:一般正数或相对较大的数,可以比实际略小:实际1277,可取1270;
+左极限:一般负数或相对较小的数,可比实际略大:实际-1277,可取-1270;
+移动物体的宽度:取实际步长=整个可见区域宽度/区块个数
+移动物体的当前位置:给个初始值,在每次移动后重新赋值,用于判断这个物体移动到哪了
+左钳制位置:当按钮在这个位置左边时,命令移动物体进行移动.可以用手动设置V3值.如果用拉取场景的某个物体作为钳制位置,则要用transform.position,同时该物体和移动物体有共同父物体.
+右钳制位置:当按钮在这个位置右边时,命令移动物体进行移动.可以用手动设置V3值.
+}
+普通飞碟和Boss飞碟始终在地图上,只是没有解锁的是被锁住的,点击需要花金币去解锁.或者点击上方更多飞碟图标,同样开启购买飞碟界面.
+
+
+{
+到达目的地后再获取下一个坐标点，
+坐标之间不能太近
+几个固定的坐标
+}
+
+如何获取2d物体的坐标？
+ transform.postion 和 rectTransform.anchoredPosition  这两个坐标是完全不一样的。前面的是3D坐标，后面的是2D在Rect里的坐标，并且还是相对坐标
+
+ok,对于都在同一个父物体下的两个物体来讲,要想让一个物体移到另一个物体的位置,要用localPosition.如果这个父物体的世界坐标是(0,0,100);两个子物体相对父物体的位置()
+目的：
+	切换到这一个地图时,这个地图上的飞碟开始移动;
+
+
+ok,时间的显示:
+showTime.text = "倒计时:" + countDown.Hours + "时" + countDown.Minutes + "分" + countDown.Seconds + "秒";
+
+ok,写接口:提供读取道具数量.
+
+多写类,不要把代码揉成一块
+
+
+问题:
+
+要做的事:
+
+选择装备/道具时显示玩家拥有的装备/道具解锁状态和数量,服装的解锁状态,喷射器的解锁状态
+
+
+ok,地图选择窗的时间显示倒计时
+
+
+
+选择装备界面:
+==右上角的返回箭头没用,删除
+没有解锁的装备,要显示未解锁图标.
+如果选中了未解锁的图标,会提示这件装备未解锁.
+
+从战斗场景回来后要把List_Isfind设为isfalse;同时时间存储重新存储.
+
+
+花费100钻石,获得1000金币,获得四星僵尸1只,额外赠送一直高星僵尸
+
+ok,如果报空引用异常,试试在游戏完全不运行的情况下再次编译.
+
+
+
+问题:现在的项目是多个小游戏的集合,现在在做的三个游戏(麻将,扑克,象棋)每个游戏都是双人对战.如果每个界面都从头开始拼,那太麻烦了,也不方便管理.能不能把每个界面中类似的部分做成预制体?
+
+
+
+
+
+目的:发牌界面按下ok后,要进入对战界面.
+在中间过渡时,播放一秒钟的动画.
+加载出对应牌数的牌,每个牌都是一个button.
+按照某种顺序排列
+指示箭头指向某一张牌
+
+
+fight..puke中写播放动画的方法
+
+
+ok,发现基类BaseUI和Monobehaviour加载不出.项目删掉重新拉取.
+
+运行是发现无法加载想要的perfab_UI,因为路径不对,默认的路径只有Res/prefab,无法再细分.要么添加枚举类型的路径进行选择加载,要么用多个static路径.但后者更麻烦.
+看下枚举类型是怎么添加的
+
+按键表,用按键列表的形式使用按键,按键配表:
+{
+在BasekeyState中有两个寻找按键的类.
+第一个是由ui中按钮的相对位置来寻找按钮.
+第二个是由按键列表的配置来寻找.第二个类继承自第一个,所以有些字段不需要重复定义.
+{
+第二种方式的实现步骤:1,在第二个类中获取到按键列表的json.一般这个类的init方法中已经写好了.2,在需要调用的脚本中的start函数中写:
+
+m_key_temp = new BasekeyState_config();
+m_key_temp .init(this);//加载keyconfig表中对应类名的配置
+m_key=m_key_temp ;
+
+3,然后就直接可以使用了,除非对上下左右还要重写功能.4,当要获取按钮时,最好使用m_key.
+如果没法按照配表移动,尝试删除base.start();
+可进行调试:
+在baseui的上下左右里打个断点,运行unity,到对应界面按上下左右,进入后按F11看是哪个baseKeyState调用了.
+
+}
+未实践
+
+
+
+
+}
+
+
+{
+this指谁:
+指当前类.指这段代码归属的类.
+}
+
+让text显示外部json文件中的数据,调用外部json,json文件读取,
+{
+实现步骤{
+1,在外部写一个类,类中声明一个list,并用这个list去获取外部json.
+test_list = new List<string>();
+test_list = JsonMapper.ToObject<List<string>>(IOHelper.LoadFlie(Application.streamingAssetsPath + "/JsonData/GameDesc.json"));
+2.在需要的地方按索引进行读取
+text=test_list[i];
+}
+}
+
+
+{
+滑雪场:
+临安清凉峰镇白果村大明山景区
+}
+
+ok,??,双问号是.net的语法糖，是一个便捷的写法，意思是a是否为null，是的话a=后面的表达式，不为空就无变化。
+
+{
+如何把spine文件导入到unity;导入spine文件
+
+先在unity项目中放入spine-unity和spine-csharp两个插件.
+一个可用的spine文件需要三个:xxx.atlas,xxx.skel,xxx.png;把xxx.atlas改为xxx.atlas.txt.
+把这三个文件拖入unity,把生成的文件中plant_1_SkeletonData拖入场景,选择第一个SkelAnimation,进行测试
+
+如果缺少这三个文件中的某一个,就需要在正版spine中重新导出.
+}
+ok,spine动画中有些图片会有白边,需要更换图片资源.怎么换?找到unity中存放spine的文件夹,一般是什么model的,里面是各种spine动画或模型.打开所在文件夹.用找好的质量更高的图片替换掉这个文件夹中的图片,png文件即可.
+也许新的图片需要先压缩,打开百度搜索熊猫压图进行压缩.
+
+{
+服务器简述:"一式两份",要实现一个行为需要让它在两个地方实现.一是服务器端,一是客户端.
+现在是分别在两端写了类,内容完全相同.
+然后需要在severMgr中注册这两个类的实例.
+}
+ok,写代码时要放适当活跃的音乐,sundances就不错
+
+ok,spine动画中添加事件:打开spine文件,左上角让动画run,选择你要在哪个动画里添加事件就播放这个动画(比如,攻击);光标进程移动到这个动画的适当帧位置,看右边有个紫色的钥匙图样,点击下方的"添加事件"按钮,此时会多出一个紫色钥匙,然后再点击这个新建的紫色的钥匙,它会变红.完成,保存,导出.导出时选择二进制,在文件格式的后缀名添加".bytes",然后检查图集的,点击设置,左下方第一栏是否为"1.0".ok,导出.
+
+ok,一个spine文件怎么导入到unity:导出的文件中filename.skel的后缀名要添加".bytes",然后连同filename.atlas替换unity相应文件夹的文件.
+
+
+ok,bug:装备选择界面,按钮移开后,原先的按钮大小变成0.8倍;gui动画无法关闭;在BasekeyState中的上下左右方法里添加了检测gui动画的功能,只要有这个组件就会进行缩放,且按钮移开后还会被修改原有尺寸.所以移除按钮上的这个组件.
+
+
+
+
+unity怎么播放音乐,如何加载音乐
+{
+1.找到音乐文件
+2.
+}
+
+控制音乐;
+控制按钮,按键选中
+按钮逻辑是咋样的?为什么会找不到按钮?
+
+音乐整理添加,
+uiBug,武器购买后实际上并没有添加,武器购买升级界面有武器显示是不对的
+//把棋牌的sound脚本替换当前文件夹,
+//将ui界面脚本中的所有gui动画相关代码删除,
+//装备选择界面中国添加选定装备后显示对勾的功能
+开始学习后,就一定会学完.
+
+
+{
+准备界面 xxxx
+
+主界面  汽车餐厅 _music_drivethru
+沙滩战斗音乐,_music_gameplay_beach
+沼泽战斗音乐,_music_gameplay
+雪地战斗音乐,_music_gameplay_snow
+地图中的环境效果音_music_map
+
+几个工厂的音效
+按钮左右切换时的音效
+按下back时的音效
+汽车喇叭声
+汽车来和走的声音,vehicle_move_in,vehicle_move_out
+钻石或者金币不够时的音效
+地图一:乌鸦,青蛙,鸟
+沼泽泥土翻腾声音,mud_gulb_04,mud_gulb_05
+飞艇暂时离开的声音,ship_enter_level
+僵尸从泥土里出现的声音,zombie_rising_from_mud_01
+眩晕的声音,knockout
+在地上走路的声音跳跃的声音,move_gravel_left_02,move_mud_right_02,move_sand_right_03,move_snow_right_02
+放下肉的声音,
+肉消失的声音,
+喷射器持续的声音
+发射鱼叉枪的声音,
+收回的声音,
+收集到金币的声音,coin_stash-1 
+换武器的声音,wpn_pickup_weapon
+换(重新补充)弹药的声音,wpn_pickup_ammo
+捕捉到僵尸的声音,zombie_catch-1
+
+主界面里的榨汁机解锁的声音,各种机器解锁的声音,juice_squeezer_build,
+僵尸出现后惊讶的声音
+挑战成功的声音,_challenge_complete
+失败的声音,_challenge_failed
+时间到了的声音,时间倒计时的声音
+化学工厂声音,kiosk_customer_leave_01
+工厂升级声音,menu_upgrade-turbo
+ufo寻找时的声音,droid_chatter_04,droid_chatter_03,droid_chatter_02,droid_chatter_01,droid_scanner_01,
+ufo发现声音,zombies_found_01
+}
+
+
+{富强 民主 文明 和谐
+
+自由 平等 公正 法制
+
+爱国 敬业 诚信 友善
+}
+
+game_assets,闪电链,陷阱闭合
+
+hud_assets,冰冻子弹,
+
+资本主义核心价值观:
+欺骗 污蔑 甩锅 偷窃
+
+阴谋 反智 种族 极端 
+
+自利 自私 
+
+{
+动态加载图片要用:Resources.Load<Sprite>("path");
+如果换成(Sprite)Resources.Load("path");就会报错,无法加载.
+InvalidCastException: Specified cast is not valid.
+
+}
+
+{
+excel表格,excel操作
+字符串减去字符串:=SUBSTITUTE(A6,D1,"")
+字符串加上字符串:=SUBSTITUTE(A6,D1,"")
+怎么在输入公式时固定选中一个单元格:选中单元格时,按F4,或输入$D$1
+
+}
+{
+cmd打开控制面板:
+打开命令行窗口之后,输入“control”,然后按下回车。
+}
+{批量改文件名
+批量修改图片名字,扑克图片成批修改:
+1,获取要替换批量图片的名字(初始名字) 2把他们放到excle表格中 3把要替换成什么样的名字另写一列(目标名字)
+4确认左边放的初始名字和右边放的目标名字是一一对应的 5在初始名字右边再新加一列,全部写ren 
+6,把这三列都复制,在批量图片的文件夹中新建一个txt,粘贴所复制的内容. 7把这个txt后缀名改为bat,运行
+
+
+如何获批量获取图片名字:cmd窗口输入:cd  /dE:\接受文件\资源_棋牌\批量图片所在文件夹  回车;
+或者打开所在文件夹,在地址栏直接点一下,输入cmd
+再输入:dir/b>rename.xls.
+就会在批量图片所在文件夹中生成包含所有初始名字的exl
+
+}
+{
+excle给一个表格后面增加字符串 =A1&".png"
+}
+
+{
+遇到在一个界面有6个玩家，需要同时显示这些玩家的所有信息，
+
+
+func1（int i）
+{
+transform.find（"play"+i"/name"）...text=“xxx”；
+transform.find（"play"+i"/score"）...text=“1000”；
+}
+
+这样调用时一次显示一名玩家的信息。需要调用6次。
+
+
+有无其他方法？
+
+}
+
+
+{
+致爱丽丝:
++下+下+7986  1367   3078
+	  h;y	 de5   h;y
+
+    3876
+ de5   h;y
+
+789+ 	  5num+9 
+    k回车i
+}
+
+{
+目的:在触摸屏上实现虚拟手柄的应用程序
+
+用windowsForm搭建窗口--经查windowsForm对应的资料很少
+
+用wpf的blander做控件--查找wpf做多点触控(MT)开发--(wpf窗口字体调整:FontFamily)(启动后在屏幕中间)(窗口大小不可调整)(隐藏窗口边框)(设置窗口大小Title="MainWindow" Height="600" Width="1024")--编译完的程序在(bin/debug/xx.exe)
+
+}
+
+
+
+{ubuntu操作,ubuntu常用指令:
+
+参看:
+E:\接受文件\资源_YOLOv4-Tiny\ubuntu笔记.txt
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
