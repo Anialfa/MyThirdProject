@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfTouchFrameSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="780" Width="1330"
+        Background="Tan"  ResizeMode="NoResize"
+        >
+    <Grid Height="720" Width="1280" Background="Black">
+        <Canvas x:Name="canvas1"
+                Background="Gray" Margin="50,390,950,50"  Height="250" Width="250" >
+            <Image Name="butL" Height="60" Width="60" Source="C:\Res_but\ctrl_but.png" Canvas.Left="110" Canvas.Top="110"  />
+        </Canvas>
+        <TextBox Text="--" TextWrapping="Wrap" Canvas.Left="450" Canvas.Top="-364" FontFamily="Arial Black"  FontSize="25" Name="tt3" Margin="0,96,1044,529"/>
+        <TextBox Text="--" TextWrapping="Wrap" Margin="0,0,1044,624" FontFamily="Arial Black"  FontSize="25" Name="tt1"/>
+        <TextBox Text="--" TextWrapping="Wrap" Margin="1044,1,0,624" FontFamily="Arial Black"  FontSize="25" x:Name="tt2"/>
+        <Canvas x:Name="canvas2"
+            Background="Gray" Margin="950,390,50,50" Height="250" Width="250" >
+            <Image Name="butR"  Height="60" Width="60" Source="C:\Res_but\ctrl_but.png"  Canvas.Left="110" Canvas.Top="110"/>
+
+        </Canvas>
+        <TextBox Text="--" TextWrapping="Wrap" FontFamily="Arial Black"  FontSize="25" x:Name="tt4" Margin="1044,96,0,529"/>
+
+    </Grid>
+</Window>
