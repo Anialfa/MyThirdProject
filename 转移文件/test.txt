@@ -1,5 +1,14 @@
 
 {
+3dMAX2018破解方式:
+https://www.yutu.cn/softhtml/softsetup_354.html
+
+}
+
+
+
+
+{
 gpu编程:
 
 	通用并行编程:
@@ -1311,7 +1320,41 @@ E:\接受文件\资源_YOLOv4-Tiny\ubuntu笔记.txt
 
 }
 
+{
+空间数值转换函数:
+ static float mapEx(float val, float inmin = -1, float inmax =1, float outmin = 1100, float   outmax = 1900)
+       {
 
+            if(val < inmin)
+            {
+                val = inmin;
+            }
+
+            if (val > inmax)
+            {
+                val = inmax;
+            }
+
+
+            float shurucha = inmax - inmin;//输入范围 2
+            float shuchucha = outmax - outmin;//输出范围 800
+
+            float ret = val * (shuchucha / shurucha);//200
+
+
+            float min = inmin * (shuchucha / shurucha);//-1*400
+
+            float mincha = min - outmin;//-1500
+
+            ret = ret - mincha;
+
+            return ret;
+
+        }
+
+
+
+}
 
 
 
