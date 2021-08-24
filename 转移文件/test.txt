@@ -191,6 +191,19 @@ https://zhuanlan.zhihu.com/p/62471100
 
 }
 
+
+{
+siki学院的课程:
+
+5.X 愤怒的小鸟
+[Shader Forge入门链接：https://pan.baidu.com/s/1n8324ujcUYmeMb40si30RQ
+密码：uxuq]
+[通过实例学习：游戏存档和读档链接:https://pan.baidu.com/s/1v981EiRQ5ZQf0jmQPlHdMw 密码：3424]
+
+
+}
+
+
 vs的界面风格,调整vs界面颜色
 {
 工具-选项-环境-常规-深色
@@ -207,12 +220,27 @@ ctrl+T:旋转单一选中的图片
 快捷复制,点中窗口中的物体,按住alt,拖动
 
 
+外部调用的几种方法:
+{
+[1]有BaseUI和uiMgr脚本:
+ public static UI_Fight GetMe()
+    {
+        return (UI_Fight)getMe("UI_Fight");
+    }
+
+C#单例
+
+
+
+}
+
+
 {uv动画，参考https://blog.csdn.net/u011047171/article/details/46776713
 （uv位移动画）uv平移动画：平移星空，天空，背景，平移播放广告等
 uv序列动画：火焰，倒计时等
 uv旋转动画：时钟，漩涡，魔法阵
 
-平移动画：可用的代码
+平移动画：可用的代码 shader动画,UV动画
 {
 Shader "Unlit/MyShader/UVAim"
 {
@@ -1078,6 +1106,27 @@ ok,发现基类BaseUI和Monobehaviour加载不出.项目删掉重新拉取.
 
 运行是发现无法加载想要的perfab_UI,因为路径不对,默认的路径只有Res/prefab,无法再细分.要么添加枚举类型的路径进行选择加载,要么用多个static路径.但后者更麻烦.
 看下枚举类型是怎么添加的
+
+{
+枚举的使用:
+public enum XvliKeycodeStatus
+{
+    normal,//正常
+    keyDown,//按下
+    keyUp//抬起
+}
+
+protected XvliKeycodeStatus key=XvliKeycodeStatus.normal;
+
+private   void R2KeyDown() 
+{
+    key = XvliKeycodeStatus.keyDown;
+}
+
+
+}
+
+
 
 按键表,用按键列表的形式使用按键,按键配表:
 {
